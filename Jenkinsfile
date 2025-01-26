@@ -6,25 +6,24 @@ pipeline {
 
   environment {
     DOCKERHUB_SVC=credentials('dockerhub-svc-account')
+    VM_SSH_KEYS=credentials('myawesomeprojectwideuser ')
   }
   
 stages {
 
 stage('Login to DockerHub'){
     steps {
+    
     sh('docker login --username $DOCKERHUB_SVC_USR --password $DOCKERHUB_SVC_PSW')
-    sh('rm  -rf /root/.docker')
-    }
-    }
-
-
-
-
-
-
-
-
-
+    echo "**********************"
+    echo "$VM_SSH_KEYS"
   
+    sh('rm  -rf /root/.docker')
+
+      
+    }
 }
+}
+
+
 }
