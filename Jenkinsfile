@@ -15,7 +15,7 @@ stage('Login to DockerHub'){
     steps {
     
     sh('docker login --username $DOCKERHUB_SVC_USR --password $DOCKERHUB_SVC_PSW')
-    sh(echo "***")
+    sh("echo "***"")
     sh("echo $VM_SSH_KEYS")
   
     sh('rm  -rf /root/.docker')
