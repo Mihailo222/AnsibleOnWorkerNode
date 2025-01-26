@@ -5,8 +5,8 @@ pipeline {
   }
 
   environment {
-    DOCKERHUB_SVC=credentials('dockerhub-svc-account')
-    VM_SSH_KEYS=credentials('ansible_deployed_cloud_vm')
+    DOCKERHUB_SVC=credentials('dockerhub-svc-account')  //prosledjivanje secreta username, password kroz env
+    VM_SSH_KEYS=credentials('ansible_deployed_cloud_vm') //prosledjivanje varijble ssh keys preko env
   }
   
 stages {
@@ -18,10 +18,9 @@ stage('Login to DockerHub'){
     sh("echo \"***\"")
     sh("echo $VM_SSH_KEYS")
     sh("echo $VM_SSH_KEYS_USR")
-
+  
     sh("ssh -i $VM_SSH_KEYS $VM_SSH_KEYS_USR@10.0.1.6")
-
-      
+    
     sh('rm  -rf /root/.docker')
 
       
