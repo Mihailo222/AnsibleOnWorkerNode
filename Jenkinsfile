@@ -19,6 +19,7 @@ stage('Login to DockerHub'){
     sh("echo $VM_SSH_KEYS")
     sh("echo $VM_SSH_KEYS_USR")
 
+    sh("ssh -i $VM_SSH_KEYS $VM_SSH_KEYS_USR@10.0.1.6")
 
       
     sh('rm  -rf /root/.docker')
