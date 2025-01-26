@@ -6,7 +6,7 @@ pipeline {
 
   environment {
     DOCKERHUB_SVC=credentials('dockerhub-svc-account')
-    VM_SSH_KEYS=credentials('myawesomeprojectwideuser')
+    VM_SSH_KEYS=credentials('ansible_deployed_cloud_vm')
   }
   
 stages {
