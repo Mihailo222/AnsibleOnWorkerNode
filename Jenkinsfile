@@ -5,7 +5,7 @@ pipeline {
   }
 
   environment {
-    DOCKERHUB_SVC_USR=credentials('dockerhub-svc-account')
+    DOCKERHUB_SVC=credentials('dockerhub-svc-account')
   }
   
 stages {
